@@ -104,25 +104,6 @@ Upload `esp32_recieve_code.ino`.
     * **Cloud Sync:** Uploads JSON strings to Firebase every 500ms.
 
 
-
----
-
-## 📱 Phase 3: Unity & Digital Twin
-
-### Requirements
-* Unity 2021.3 LTS (or newer)
-* Firebase Unity SDK (`FirebaseDatabase.unitypackage`)
-* `google-services-desktop.json` (placed in `Assets/StreamingAssets`)
-
-### Setup Steps
-1.  **Import Model:** Drag the Robot Arm FBX into `Assets/Models`.
-2.  **Hierarchy:** Create a nested hierarchy (Base → Joint1 → Joint2...).
-3.  **Scripts:**
-    * `FirebaseReader.cs`: Connects to Firebase and deserializes JSON into a public float array.
-    * `RobotJointController.cs`: Reads the array from the reader and applies `Quaternion.Euler` rotations to the 3D joints.
-
-**Expected Database Structure:**
-**Expected Database Structure:**
 The system uploads data to the `robot1` node. Note that the arrays are stored as **JSON-formatted strings** to optimize parsing speed and data integrity during transmission.
 
 ```json
