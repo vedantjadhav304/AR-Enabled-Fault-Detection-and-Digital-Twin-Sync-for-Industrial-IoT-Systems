@@ -122,9 +122,14 @@ Upload `esp32_recieve_code.ino`.
     * `RobotJointController.cs`: Reads the array from the reader and applies `Quaternion.Euler` rotations to the 3D joints.
 
 **Expected Database Structure:**
+**Expected Database Structure:**
+The system uploads data to the `robot1` node. Note that the arrays are stored as **JSON-formatted strings** to optimize parsing speed and data integrity during transmission.
+
 ```json
 {
-  "robot": {
-    "values": [30, 45, 10, 90, 0, 0]
+  "robot1": {
+    "actual": "[45.209, 109.644, 89.775, 89.846, 89.866, 160.168]",
+    "errorCode": "[0, 0, 0, 0, 0, 0]",
+    "target": "[45.000, 60.000, 120.000, 90.000, 90.000, 160.000]"
   }
 }
